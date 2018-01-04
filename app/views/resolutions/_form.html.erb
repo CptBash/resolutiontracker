@@ -1,0 +1,82 @@
+<%= form_with(model: resolution, local: true) do |form| %>
+  <% if resolution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resolution.errors.count, "error") %> prohibited this resolution from being saved:</h2>
+
+      <ul>
+      <% resolution.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :resolution_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mission_statement %>
+    <%= form.text_area :mission_statement, id: :resolution_mission_statement %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.number_field :state_id, id: :resolution_state_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :resolution_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :goal_ids %>
+    <%= form.text_field :goal_ids, id: :resolution_goal_ids %>
+  </div>
+
+  <div class="field">
+    <%= form.label :spam_time %>
+    <%= form.time_select :spam_time, id: :resolution_spam_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sun %>
+    <%= form.check_box :sun, id: :resolution_sun %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mon %>
+    <%= form.check_box :mon, id: :resolution_mon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tue %>
+    <%= form.check_box :tue, id: :resolution_tue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wed %>
+    <%= form.check_box :wed, id: :resolution_wed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thu %>
+    <%= form.check_box :thu, id: :resolution_thu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fri %>
+    <%= form.check_box :fri, id: :resolution_fri %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sat %>
+    <%= form.check_box :sat, id: :resolution_sat %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

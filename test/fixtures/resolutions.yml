@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  mission_statement: MyText
+  state_id: 1
+  user_id: 1
+  goal_ids: MyString
+  spam_time: 2018-01-04 13:54:57
+  sun: false
+  mon: false
+  tue: false
+  wed: false
+  thu: false
+  fri: false
+  sat: false
+
+two:
+  name: MyString
+  mission_statement: MyText
+  state_id: 1
+  user_id: 1
+  goal_ids: MyString
+  spam_time: 2018-01-04 13:54:57
+  sun: false
+  mon: false
+  tue: false
+  wed: false
+  thu: false
+  fri: false
+  sat: false

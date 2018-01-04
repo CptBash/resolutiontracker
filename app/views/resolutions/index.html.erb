@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Resolutions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mission statement</th>
+      <th>State</th>
+      <th>User</th>
+      <th>Goal ids</th>
+      <th>Spam time</th>
+      <th>Sun</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resolutions.each do |resolution| %>
+      <tr>
+        <td><%= resolution.name %></td>
+        <td><%= resolution.mission_statement %></td>
+        <td><%= resolution.state_id %></td>
+        <td><%= resolution.user_id %></td>
+        <td><%= resolution.goal_ids %></td>
+        <td><%= resolution.spam_time %></td>
+        <td><%= resolution.sun %></td>
+        <td><%= resolution.mon %></td>
+        <td><%= resolution.tue %></td>
+        <td><%= resolution.wed %></td>
+        <td><%= resolution.thu %></td>
+        <td><%= resolution.fri %></td>
+        <td><%= resolution.sat %></td>
+        <td><%= link_to 'Show', resolution %></td>
+        <td><%= link_to 'Edit', edit_resolution_path(resolution) %></td>
+        <td><%= link_to 'Destroy', resolution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resolution', new_resolution_path %>

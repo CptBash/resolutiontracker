@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @resolution.name %>
+</p>
+
+<p>
+  <strong>Mission statement:</strong>
+  <%= @resolution.mission_statement %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @resolution.state_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @resolution.user_id %>
+</p>
+
+<p>
+  <strong>Goal ids:</strong>
+  <%= @resolution.goal_ids %>
+</p>
+
+<p>
+  <strong>Spam time:</strong>
+  <%= @resolution.spam_time %>
+</p>
+
+<p>
+  <strong>Sun:</strong>
+  <%= @resolution.sun %>
+</p>
+
+<p>
+  <strong>Mon:</strong>
+  <%= @resolution.mon %>
+</p>
+
+<p>
+  <strong>Tue:</strong>
+  <%= @resolution.tue %>
+</p>
+
+<p>
+  <strong>Wed:</strong>
+  <%= @resolution.wed %>
+</p>
+
+<p>
+  <strong>Thu:</strong>
+  <%= @resolution.thu %>
+</p>
+
+<p>
+  <strong>Fri:</strong>
+  <%= @resolution.fri %>
+</p>
+
+<p>
+  <strong>Sat:</strong>
+  <%= @resolution.sat %>
+</p>
+
+<%= link_to 'Edit', edit_resolution_path(@resolution) %> |
+<%= link_to 'Back', resolutions_path %>

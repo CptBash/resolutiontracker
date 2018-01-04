@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :resolutions
   devise_for :users do
     member do
       get 'users#dashboard'
