@@ -6,20 +6,20 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+  ruby 2.4.1p111
+
+* Rails version
+  Rails 5.1.4
 
 * System dependencies
+  bundler
 
 * Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+  N/A
 
 * Deployment instructions
+  pull repo
+  bundle install
+  rake db:migrate
 
-* ...
 # resolutiontracker
