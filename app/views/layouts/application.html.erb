@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ResolutionTracker</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+<head>
+  <title>ResolutionTracker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="ui container">
+    <div id="logo_container" class="">
+      <!-- need logo :) -->
+      <%#= image_tag "", id: "logo", alt: "ResolutionTracker logo", class: "ui fluid image" %>
+    </div>
+    <%= render 'layouts/menu' %>
+    <%= render 'layouts/flash_message' if flash[:notice] %>
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>
