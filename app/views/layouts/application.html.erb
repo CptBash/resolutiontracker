@@ -12,7 +12,9 @@
       <!-- need logo :) -->
       <%#= image_tag "", id: "logo", alt: "ResolutionTracker logo", class: "ui fluid image" %>
     </div>
-    <%= render 'layouts/menu' %>
+    <% unless current_user.nil? %>
+      <%= render 'layouts/menu' %>
+    <% end %>
     <%= render 'layouts/flash_message' if flash[:notice] %>
     <%= yield %>
   </div>
