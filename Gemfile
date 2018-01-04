@@ -16,6 +16,9 @@ gem 'jbuilder',      '~> 2.5'
 gem 'devise'
 gem 'wdm',           '>= 0.1.0'
 gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'rubocop'
+
 
 group :development, :test do
 
