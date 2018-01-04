@@ -19,7 +19,7 @@
       <%= link_to 'User', current_user, class: 'ui item' %>
     </a>
     <a class="ui item">
-      Logout
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
     </a>
   </div>
 </div>
