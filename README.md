@@ -5,21 +5,21 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: <br />
   ruby 2.4.1p111
 
-* Rails version
+* Rails version: <br />
   Rails 5.1.4
 
-* System dependencies
+* System dependencies: <br />
   bundler
 
-* Configuration
+* Configuration: <br />
   N/A
 
-* Deployment instructions
-  pull repo
-  bundle install
-  rake db:migrate
+* Deployment instructions: <br />
+  pull repo <br />
+  bundle install <br />
+  rake db:migrate <br />
 
 # resolutiontracker
