@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104205457) do
+ActiveRecord::Schema.define(version: 20180106112135) do
 
   create_table "resolutions", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180104205457) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "goal_ids", default: "[]"
+    t.boolean "cell"
+    t.boolean "email"
   end
 
   create_table "users", force: :cascade do |t|

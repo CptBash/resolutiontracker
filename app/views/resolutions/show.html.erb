@@ -20,42 +20,56 @@
   <%= @resolution.user.username %>
 </p>
 
-<!-- need to implement Goal as children -->
+<p>
+  <strong>We will remind you by:</strong>
+  <br />
+  <% if @resolution.cell? %>
+    Text messages
+  <% end %>
+  <br />
+  <% if @resolution.email? %>
+    Email reminders
+  <% end %>
+</p>
+
+<!-- need to implement Goal as Resolutin children -->
 <!-- <p>
   <strong>Goal ids:</strong>
   <%#= @resolution.goal_ids %>
 </p> -->
+<% if @resolution.cell? or @resolution.email? %>
+  <p><strong>We will remind you on:</strong></p>
 
-<p><strong>We will remind you on:</strong></p>
+  <% if @resolution.sun? %>
+    <p><strong>Sunday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+  <% end %>
 
-<% if @resolution.sun? %>
-  <p><strong>Sunday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+  <% if @resolution.mon? %>
+    <p><strong>Monday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+  <% end %>
+
+  <% if @resolution.tue? %>
+    <p><strong>Tuesday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+  <% end %>
+
+  <% if @resolution.wed? %>
+    <p><strong>Wednesday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+  <% end %>
+
+  <% if @resolution.thu? %>
+    <p><strong>Thursday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+  <% end %>
+
+  <% if @resolution.fri? %>
+    <p><strong>Friday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+  <% end %>
+
+  <% if @resolution.sat? %>
+    <p><strong>Saturday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+  <% end %>
+<% else %>
+  <p><strong>Please choose to get reminders by email, text messages, or both!</strong></p>
 <% end %>
-
-<% if @resolution.mon? %>
-  <p><strong>Monday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
-<% end %>
-
-<% if @resolution.tue? %>
-  <p><strong>Tuesday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
-<% end %>
-
-<% if @resolution.wed? %>
-  <p><strong>Wednesday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
-<% end %>
-
-<% if @resolution.thu? %>
-  <p><strong>Thursday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
-<% end %>
-
-<% if @resolution.fri? %>
-  <p><strong>Friday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
-<% end %>
-
-<% if @resolution.sat? %>
-  <p><strong>Saturday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
-<% end %>
-
 TODO: implement Goals
 <br />
 <%= link_to 'Edit', edit_resolution_path(@resolution) %> |

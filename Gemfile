@@ -19,6 +19,7 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'rubocop'
 gem 'rb-inotify', github: 'nex3/rb-inotify', platforms: :ruby, require: false
 gem 'wdm', platforms: :mingw, require: false
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 group :development, :test do
 

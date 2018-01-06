@@ -21,48 +21,66 @@
     <%= form.text_area :mission_statement, id: :resolution_mission_statement %>
   </div>
 
-  <%= form.hidden_field :user_id, value: params[:user_id].to_i %>
+  <% if resolution.new_record? %>
+    <%= form.hidden_field :user_id, value: params[:user_id].to_i %>
+  <% else %>
+    <%= form.hidden_field :user_id, value: resolution.user.id %>
+  <% end %>
 
   <div class="field">
     <%= form.label :spam_time %>
     <%= form.time_select :spam_time, id: :resolution_spam_time %>
   </div>
 
-  <div class="field">
-    <%= form.label :sun %>
-    <%= form.check_box :sun, id: :resolution_sun %>
-  </div>
+  <div style="display: ruby-base-container;">
+    <div class="field">
+      <%= form.label :sun %>
+      <%= form.check_box :sun, id: :resolution_sun %>
+    </div>
 
-  <div class="field">
-    <%= form.label :mon %>
-    <%= form.check_box :mon, id: :resolution_mon %>
-  </div>
+    <div class="field">
+      <%= form.label :mon %>
+      <%= form.check_box :mon, id: :resolution_mon %>
+    </div>
 
-  <div class="field">
-    <%= form.label :tue %>
-    <%= form.check_box :tue, id: :resolution_tue %>
-  </div>
+    <div class="field">
+      <%= form.label :tue %>
+      <%= form.check_box :tue, id: :resolution_tue %>
+    </div>
 
-  <div class="field">
-    <%= form.label :wed %>
-    <%= form.check_box :wed, id: :resolution_wed %>
-  </div>
+    <div class="field">
+      <%= form.label :wed %>
+      <%= form.check_box :wed, id: :resolution_wed %>
+    </div>
 
-  <div class="field">
-    <%= form.label :thu %>
-    <%= form.check_box :thu, id: :resolution_thu %>
-  </div>
+    <div class="field">
+      <%= form.label :thu %>
+      <%= form.check_box :thu, id: :resolution_thu %>
+    </div>
 
-  <div class="field">
-    <%= form.label :fri %>
-    <%= form.check_box :fri, id: :resolution_fri %>
-  </div>
+    <div class="field">
+      <%= form.label :fri %>
+      <%= form.check_box :fri, id: :resolution_fri %>
+    </div>
 
-  <div class="field">
-    <%= form.label :sat %>
-    <%= form.check_box :sat, id: :resolution_sat %>
+    <div class="field">
+      <%= form.label :sat %>
+      <%= form.check_box :sat, id: :resolution_sat %>
+    </div>
   </div>
-
+  <br />
+  <strong>Remind via:</strong>
+  <br />
+  <div style="display: ruby-base-container;">
+    <div class="field">
+      <%= form.label :cell %>
+      <%= form.check_box :cell, id: :resolution_cell %>
+    </div>
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.check_box :email, id: :resolution_email %>
+    </div>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
