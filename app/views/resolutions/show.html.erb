@@ -12,58 +12,51 @@
 
 <p>
   <strong>State:</strong>
-  <%= @resolution.state_id %>
+  <%= @resolution.state %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @resolution.user_id %>
+  <%= @resolution.user.username %>
 </p>
 
-<p>
+<!-- need to implement Goal as children -->
+<!-- <p>
   <strong>Goal ids:</strong>
-  <%= @resolution.goal_ids %>
-</p>
+  <%#= @resolution.goal_ids %>
+</p> -->
 
-<p>
-  <strong>Spam time:</strong>
-  <%= @resolution.spam_time %>
-</p>
+<p><strong>We will remind you on:</strong></p>
 
-<p>
-  <strong>Sun:</strong>
-  <%= @resolution.sun %>
-</p>
+<% if @resolution.sun? %>
+  <p><strong>Sunday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+<% end %>
 
-<p>
-  <strong>Mon:</strong>
-  <%= @resolution.mon %>
-</p>
+<% if @resolution.mon? %>
+  <p><strong>Monday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+<% end %>
 
-<p>
-  <strong>Tue:</strong>
-  <%= @resolution.tue %>
-</p>
+<% if @resolution.tue? %>
+  <p><strong>Tuesday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+<% end %>
 
-<p>
-  <strong>Wed:</strong>
-  <%= @resolution.wed %>
-</p>
+<% if @resolution.wed? %>
+  <p><strong>Wednesday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+<% end %>
 
-<p>
-  <strong>Thu:</strong>
-  <%= @resolution.thu %>
-</p>
+<% if @resolution.thu? %>
+  <p><strong>Thursday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+<% end %>
 
-<p>
-  <strong>Fri:</strong>
-  <%= @resolution.fri %>
-</p>
+<% if @resolution.fri? %>
+  <p><strong>Friday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+<% end %>
 
-<p>
-  <strong>Sat:</strong>
-  <%= @resolution.sat %>
-</p>
+<% if @resolution.sat? %>
+  <p><strong>Saturday at <%= @resolution.spam_time.strftime("%I:%M%p") %></strong></p>
+<% end %>
 
+TODO: implement Goals
+<br />
 <%= link_to 'Edit', edit_resolution_path(@resolution) %> |
 <%= link_to 'Back', resolutions_path %>
