@@ -21,6 +21,48 @@ class GoalsController < ApplicationController
   def edit
   end
 
+  def make_complete
+    @goal = Goal.find(params[:goal_id].to_i)
+    @goal.state = 2
+    respond_to do |format|
+      if @goal.save
+        format.html { redirect_to @goal, notice: 'Congratulations on completing your goal! Its been removed from your reminders.' }
+        format.json { render :show, status: :ok, location: @goal }
+      else
+        format.html { redirect_to @goal, notice: 'Oops, something went wrong! Please try again' }
+        format.json { render :show, status: :ok, location: @goal }
+      end
+    end
+  end
+
+  def make_on_hold
+    @goal = Goal.find(params[:goal_id].to_i)
+    @goal.state = 3
+    respond_to do |format|
+      if @goal.save
+        format.html { redirect_to @goal, notice: 'Your goal is now on hold, you wont see it in your reminders until its restored.' }
+        format.json { render :show, status: :ok, location: @goal }
+      else
+        format.html { redirect_to @goal, notice: 'Oops, something went wrong! Please try again' }
+        format.json { render :show, status: :ok, location: @goal }
+      end
+    end
+  end
+
+  def make_active
+    @goal = Goal.find(params[:goal_id].to_i)
+    @goal.state = 1
+    respond_to do |format|
+      if @goal.save
+        format.html { redirect_to @goal, notice: 'Your goal is now active, expect it to show up in your reminders again.' }
+        format.json { render :show, status: :ok, location: @goal }
+      else
+        format.html { redirect_to @goal, notice: 'Oops, something went wrong! Please try again' }
+        format.json { render :show, status: :ok, location: @goal }
+      end
+    end
+  end
+
   # POST /goals
   # POST /goals.json
   def create

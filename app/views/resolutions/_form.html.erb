@@ -29,7 +29,7 @@
 
   <div class="field">
     <%= form.label :spam_time %>
-    <%= form.time_select :spam_time, id: :resolution_spam_time %>
+    <%= form.time_select :spam_time, id: :resolution_spam_time, minute_step: 15, ampm: true %>
   </div>
 
   <div style="display: ruby-base-container;">
@@ -73,8 +73,8 @@
   <br />
   <div style="display: ruby-base-container;">
     <div class="field">
-      <%= form.label :cell %>
-      <%= form.check_box :cell, id: :resolution_cell %>
+      <%= form.label 'Cell(coming soon)' %>
+      <%= form.check_box :cell, id: :resolution_cell, disabled: true %>
     </div>
     <div class="field">
       <%= form.label :email %>

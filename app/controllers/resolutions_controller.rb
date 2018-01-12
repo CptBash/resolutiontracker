@@ -21,6 +21,48 @@ class ResolutionsController < ApplicationController
   def edit
   end
 
+  def make_complete
+    @resolution = Resolution.find(params[:resolution_id].to_i)
+    @resolution.state = 2
+    respond_to do |format|
+      if @resolution.save
+        format.html { redirect_to @resolution, notice: 'Congratulations on completing your resolution! You wont get reminders for it anymore.' }
+        format.json { render :show, status: :ok, location: @resolution }
+      else
+        format.html { redirect_to @resolution, notice: 'Oops something went wrong! Please try again' }
+        format.json { render :show, status: :ok, location: @resolution }
+      end
+    end
+  end
+
+  def make_on_hold
+    @resolution = Resolution.find(params[:resolution_id].to_i)
+    @resolution.state = 3
+    respond_to do |format|
+      if @resolution.save
+        format.html { redirect_to @resolution, notice: 'Your resolution is now on hold, you wont get anymore reminders until its restored.' }
+        format.json { render :show, status: :ok, location: @resolution }
+      else
+        format.html { redirect_to @resolution, notice: 'Oops something went wrong! Please try again' }
+        format.json { render :show, status: :ok, location: @resolution }
+      end
+    end
+  end
+
+  def make_active
+    @resolution = Resolution.find(params[:resolution_id].to_i)
+    @resolution.state = 1
+    respond_to do |format|
+      if @resolution.save
+        format.html { redirect_to @resolution, notice: 'Your resolution is now active, expect to get reminders again.' }
+        format.json { render :show, status: :ok, location: @resolution }
+      else
+        format.html { redirect_to @resolution, notice: 'Oops something went wrong! Please try again' }
+        format.json { render :show, status: :ok, location: @resolution }
+      end
+    end
+  end
+
   # POST /resolutions
   # POST /resolutions.json
   def create

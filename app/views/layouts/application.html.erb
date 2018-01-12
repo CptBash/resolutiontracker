@@ -16,7 +16,7 @@
     <% unless current_user.nil? %>
       <%= render 'layouts/menu' %>
     <% end %>
-    <%= render 'layouts/flash_message' if flash[:notice] %>
+      <%= render 'layouts/flash_message' if flash[:notice] %>
     <%= yield %>
   </div>
 </body>

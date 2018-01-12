@@ -1,18 +1,25 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Goal:</strong>
   <%= @goal.name %>
 </p>
 
+<% if @goal.active? %>
+  <%= link_to 'Complete', complete_goal_path(goal_id: @goal.id), class: 'ui button' %>
+  <%= link_to 'Put On Hold', store_goal_path(goal_id: @goal.id), class: 'ui button' %>
+<% elsif @goal.complete? or @goal.on_hold? %>
+  <%= link_to 'Restore', activate_goal_path(goal_id: @goal.id), class: 'ui button' %>
+<% end %>
+
 <p>
   <strong>Resolution:</strong>
-  <%= @goal.resolution.name %>
+  <%= link_to @goal.resolution.name, @goal.resolution %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= @goal.state %>
+  <%= @goal.state.humanize %>
 </p>
 
 <%= link_to 'Edit', edit_goal_path(@goal) %> |

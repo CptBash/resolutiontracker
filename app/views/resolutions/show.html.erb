@@ -1,9 +1,14 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @resolution.name %>
 </p>
+
+<% if @resolution.active? %>
+  <%= link_to 'Complete', complete_resolution_path(resolution_id: @resolution.id), class: 'ui button' %>
+  <%= link_to 'Put On Hold', store_resolution_path(resolution_id: @resolution.id), class: 'ui button' %>
+<% elsif @resolution.complete? or @resolution.on_hold? %>
+  <%= link_to 'Restore', activate_resolution_path(resolution_id: @resolution.id), class: 'ui button' %>
+<% end %>
 
 <p>
   <strong>Mission statement:</strong>
@@ -12,7 +17,7 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @resolution.state %>
+  <%= @resolution.state.humanize %>
 </p>
 
 <p>
