@@ -4,7 +4,7 @@ class ResolutionsController < ApplicationController
   # GET /resolutions
   # GET /resolutions.json
   def index
-    @resolutions = Resolution.all
+    @resolutions = Resolution.where(user_id: current_user.id)
   end
 
   # GET /resolutions/1

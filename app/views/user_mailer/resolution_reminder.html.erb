@@ -10,9 +10,16 @@
       This is to remind you to work on your <%= @resolution.name %> resolution
       <br />
     </p>
+    <% if @resolution.goals.blank? %>
+    <p>
+      Looks like your resolution is incomplete but you don't have any active goals.
+      Go make some for your '<%= @resolution.name %>' resolution or mark it as complete.
+    </p>
+    <% else %>
     <p>
       I need to add the other reminder edge cases. But this is good for now :)
     </p>
+    <% end %>
     <p>Thanks for using the app and have a great day!</p>
   </body>
 </html>

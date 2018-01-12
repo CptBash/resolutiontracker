@@ -17,7 +17,7 @@ class ResolutionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create resolution" do
     assert_difference('Resolution.count') do
-      post resolutions_url, params: { resolution: { fri: @resolution.fri, goal_ids: @resolution.goal_ids, mission_statement: @resolution.mission_statement, mon: @resolution.mon, name: @resolution.name, sat: @resolution.sat, spam_time: @resolution.spam_time, state_id: @resolution.state_id, sun: @resolution.sun, thu: @resolution.thu, tue: @resolution.tue, user_id: @resolution.user_id, wed: @resolution.wed } }
+      post resolutions_url, params: { resolution: { fri: @resolution.fri, goal_ids: @resolution.goal_ids, mission_statement: @resolution.mission_statement, mon: @resolution.mon, name: @resolution.name, sat: @resolution.sat, spam_time: @resolution.spam_time, state_id: @resolution.state, sun: @resolution.sun, thu: @resolution.thu, tue: @resolution.tue, user_id: @resolution.user_id, wed: @resolution.wed } }
     end
 
     assert_redirected_to resolution_url(Resolution.last)

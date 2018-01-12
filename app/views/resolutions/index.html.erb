@@ -7,9 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Mission statement</th>
-      <th>State</th>
-      <th>User</th>
-      <th>Goal ids</th>
+      <th>Status</th>
       <th>Spam time</th>
       <th>Sun</th>
       <th>Mon</th>
@@ -27,10 +25,8 @@
       <tr>
         <td><%= resolution.name %></td>
         <td><%= resolution.mission_statement %></td>
-        <td><%= resolution.state_id %></td>
-        <td><%= resolution.user_id %></td>
-        <td><%= resolution.goal_ids %></td>
-        <td><%= resolution.spam_time %></td>
+        <td><%= resolution.state %></td>
+        <td><%= resolution.spam_time.strftime("%I:%M%p") %></td>
         <td><%= resolution.sun %></td>
         <td><%= resolution.mon %></td>
         <td><%= resolution.tue %></td>
