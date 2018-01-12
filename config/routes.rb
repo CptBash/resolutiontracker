@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   resources :resolutions do
     member do
-  get 'make_complete', to: 'resolutions#make_complete', as: :complete
-  get 'make_active', to: 'resolutions#make_active', as: :activate
-  get 'make_on_hold', to: 'resolutions#make_on_hold', as: :store
-end
-end
+      get 'make_complete', to: 'resolutions#make_complete', as: :complete
+      get 'make_active', to: 'resolutions#make_active', as: :activate
+      get 'make_on_hold', to: 'resolutions#make_on_hold', as: :store
+    end
+  end
 
   resources :goals do
     member do
