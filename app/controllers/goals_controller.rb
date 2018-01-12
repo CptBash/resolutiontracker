@@ -4,7 +4,7 @@ class GoalsController < ApplicationController
   # GET /goals
   # GET /goals.json
   def index
-    @goals = Goal.all
+    @goals = Goal.select{|goal| goal.resolution.user_id == current_user.id}
   end
 
   # GET /goals/1

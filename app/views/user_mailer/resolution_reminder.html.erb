@@ -17,7 +17,12 @@
     </p>
     <% else %>
     <p>
-      I need to add the other reminder edge cases. But this is good for now :)
+      Remember to work specifically on:
+      <% @resolution.goals.each do |goal| %>
+      <ul>
+        <li><%= goal.name %> </li>
+      </ul>
+      <% end %>
     </p>
     <% end %>
     <p>Thanks for using the app and have a great day!</p>

@@ -16,15 +16,11 @@
     <%= form.text_field :name, id: :goal_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :resolution_id %>
-    <%= form.number_field :resolution_id, id: :goal_resolution_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.number_field :state, id: :goal_state %>
-  </div>
+  <% if goal.new_record? %>
+    <%= form.hidden_field :resolution_id, value: params[:resolution_id].to_i %>
+  <% else %>
+    <%= form.hidden_field :resolution_id, value: goal.resolution_id %>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
