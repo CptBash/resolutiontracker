@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180106112135) do
+ActiveRecord::Schema.define(version: 20180112010705) do
+
+  create_table "goals", force: :cascade do |t|
+    t.string "name"
+    t.integer "resolution_id"
+    t.integer "state", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "resolutions", force: :cascade do |t|
     t.string "name"

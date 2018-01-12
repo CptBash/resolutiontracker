@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :goals
   resources :resolutions
   devise_for :users do
     member do
