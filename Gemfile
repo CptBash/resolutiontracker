@@ -20,6 +20,7 @@ gem 'rubocop'
 gem 'rb-inotify', github: 'nex3/rb-inotify', platforms: :ruby, require: false
 gem 'wdm', platforms: :mingw, require: false
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'rails_12factor'
 
 group :development, :test do
 
