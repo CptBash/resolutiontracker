@@ -16,6 +16,10 @@ class CreateResolutions < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_column :resolutions, :goal_ids, :text, :array => true, :default => '{}'
+    if Rails.env.production?
+      add_column :resolutions, :goal_ids, :text, :array => true, :default => '{}'
+    else
+      add_column :resolutions, :goal_ids, :text, default: '[]', array:true
+    end
   end
 end
