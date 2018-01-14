@@ -39,9 +39,9 @@ group :development do
 end
 
 group :production do
-  #gem 'rails_12factor'
+  gem 'rails_12factor'
   # Use postgresql as the database for Active Record
-  #gem 'pg', '~> 0.18'
+  gem 'pg', '~> 0.18'
 end
 
 
