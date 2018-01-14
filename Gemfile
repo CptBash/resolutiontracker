@@ -19,6 +19,7 @@ gem 'rubocop'
 gem 'rb-inotify', github: 'nex3/rb-inotify', platforms: :ruby, require: false
 gem 'wdm', platforms: :mingw, require: false
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'sendgrid-ruby'
 
 group :development, :test do
 
@@ -38,9 +39,9 @@ group :development do
 end
 
 group :production do
-  gem 'rails_12factor'
+  #gem 'rails_12factor'
   # Use postgresql as the database for Active Record
-  gem 'pg', '~> 0.18'
+  #gem 'pg', '~> 0.18'
 end
 
 
