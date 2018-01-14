@@ -28,7 +28,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :spam_time %>
+    <%= form.label :spam_time %>('limited by herkou at the moment, sends daily every 12:30am')
     <%= form.time_select :spam_time, id: :resolution_spam_time, minute_step: 10, ampm: true %>
   </div>
 
